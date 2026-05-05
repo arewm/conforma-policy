@@ -16,7 +16,7 @@ Verify the prefetch-dependencies task in the PipelineRun attestation was not inv
 *Solution*: Change the mode parameter of the prefetch-dependencies task from 'permissive' to a more secure value. The permissive mode may allow insecure dependency fetching practices.
 
 * Rule type: [rule-type-indicator failure]#FAILURE#
-* FAILURE message: `Task 'prefetch-dependencies' was invoked with mode parameter set to 'permissive'`
+* FAILURE message: `Task '%s' was invoked with mode parameter set to 'permissive'`
 * Code: `prefetch_dependencies.mode_not_permissive`
 * https://github.com/conforma/policy/blob/{page-origin-refhash}/policy/release/prefetch_dependencies/prefetch_dependencies.rego#L16[Source, window="_blank"]
 

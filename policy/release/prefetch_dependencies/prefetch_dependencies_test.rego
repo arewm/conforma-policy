@@ -36,7 +36,7 @@ test_oci_ta_mode_permissive_violation if {
 	expected := {{
 		"code": "prefetch_dependencies.mode_not_permissive",
 		"effective_on": "2022-01-01T00:00:00Z",
-		"msg": "Task 'prefetch-dependencies' was invoked with mode parameter set to 'permissive'",
+		"msg": "Task 'prefetch-dependencies-oci-ta' was invoked with mode parameter set to 'permissive'",
 	}}
 	assertions.assert_equal_results(expected, prefetch_dependencies.deny) with input as _attestation("prefetch-dependencies-oci-ta", "permissive", "true")
 	assertions.assert_equal_results(expected, prefetch_dependencies.deny) with input as _slsav1_attestation("prefetch-dependencies-oci-ta", "permissive", "true")

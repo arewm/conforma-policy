@@ -21,7 +21,7 @@ import data.lib.tekton
 # custom:
 #   short_name: mode_not_permissive
 #   failure_msg: >-
-#     Task 'prefetch-dependencies' was invoked with mode parameter set to 'permissive'
+#     Task '%s' was invoked with mode parameter set to 'permissive'
 #   solution: >-
 #     Change the mode parameter of the prefetch-dependencies task from 'permissive'
 #     to a more secure value. The permissive mode may allow insecure dependency
@@ -37,7 +37,7 @@ deny contains result if {
 	some name in {"prefetch-dependencies", "prefetch-dependencies-oci-ta"}
 	name in tekton.task_names(task)
 	tekton.task_param(task, "mode") == "permissive"
-	result := metadata.result_helper(rego.metadata.chain(), [])
+	result := metadata.result_helper(rego.metadata.chain(), [name])
 }
 
 # METADATA
